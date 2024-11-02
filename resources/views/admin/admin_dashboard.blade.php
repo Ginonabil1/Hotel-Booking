@@ -121,7 +121,6 @@
 				 $('#example').DataTable();
 			   } );
 		 </script>
-
 		 
 </body>
 

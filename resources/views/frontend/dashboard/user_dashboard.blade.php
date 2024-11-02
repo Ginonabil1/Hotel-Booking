@@ -7,7 +7,7 @@
                 <div class="inner-title">
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="/">Home</a>
                         </li>
                         <li><i class='bx bx-chevron-right'></i></li>
                         <li>User Dashboard </li>
@@ -37,35 +37,45 @@
                             <div class="service-article-content">
                             <div class="row">
 
-        <div class="col-md-4">
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Total Booking</div>
-  <div class="card-body">
-   <h1 class="card-title" style="font-size: 45px;">3 Total</h1>
-    
-  </div>
-</div>                   
-         </div>
+@php
+    $user = Auth::user()->name;
+    $bookings = App\Models\Bookings::where('name',$user)->get();
 
-             <div class="col-md-4">
-<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-  <div class="card-header">Pending Booking </div>
-  <div class="card-body">
-    <h1 class="card-title" style="font-size: 45px;">3 Pending</h1>
-    
-  </div>
-</div>                   
-         </div>
+    $pending = App\Models\Bookings::where('name',$user)->where('status','0')->get();
+    $complete = App\Models\Bookings::where('name',$user)->where('status','1')->get();
+@endphp
 
 
-             <div class="col-md-4">
-<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-  <div class="card-header">Complete Booking</div>
-  <div class="card-body">
-    <h1 class="card-title" style="font-size: 45px;">3 Complete</h1>
-    
-  </div>
-</div>                   
+                
+                <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Total Booking</div>
+        <div class="card-body">
+        <h1 class="card-title" style="font-size: 45px;">{{count($bookings)}} Total</h1>
+            
+        </div>
+        </div>                   
+                </div>
+
+                    <div class="col-md-4">
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-header">Pending Booking </div>
+        <div class="card-body">
+            <h1 class="card-title" style="font-size: 45px;">{{count($pending)}} Pending</h1>
+            
+        </div>
+        </div>                   
+                </div>
+
+
+                    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-header">Complete Booking</div>
+        <div class="card-body">
+            <h1 class="card-title" style="font-size: 45px;">{{count($complete)}} Complete</h1>
+            
+        </div>
+        </div>                   
          </div>
 
 

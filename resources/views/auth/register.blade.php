@@ -36,7 +36,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 ">
                                             <div class="form-group">
-                                                <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your Username" placeholder="Username">
+                                                <input type="text" name="name" id="name" class="form-control" required placeholder="Username">
                                             </div>
                                         </div>
 

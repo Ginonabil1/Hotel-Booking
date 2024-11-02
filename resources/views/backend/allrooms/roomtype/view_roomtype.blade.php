@@ -2,28 +2,29 @@
 @section('admin')
 
     <div class="page-content">
-        <!--breadcrumb-->
-        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Manage Room Type</div>
-            <div class="ps-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Room Type List</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <div class="py-3">
+	<!--breadcrumb-->
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+
+         
+        <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
-                    <a href="{{route('add.roomtype')}}" class="btn btn-outline-primary px-5 radius-30">Add Room Type</a>                                
+
+                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Room Type List</li>
                 </ol>
             </nav>
         </div>
-        <!--end breadcrumb-->
-        <h6 class="mb-0 mt-2 text-uppercase">All Room type</h6>
+
+        <div class="ms-auto">
+            <div class="btn-group">
+                <a href="{{route('add.roomtype')}}" class="btn btn-primary px-5"> Add Room Type </a>
+
+            </div>
+        </div>
+    </div>
+    <!--end breadcrumb-->
         <hr/>
         <div class="card">
             <div class="card-body">
@@ -45,11 +46,13 @@
                             @endphp
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td> <img src="{{ (!empty($item->room->image)) ? url('upload/roomimg/'.$item->room->image) : url('upload/no_image.jpg') }}" alt="" style="width: 60px; height:40px;" >
+                                <td> <img src="{{ (!empty($item->room->image)) ? url('upload/room/'.$item->room->image) : url('upload/no_image.jpg') }}" alt="" style="width: 60px; height:40px;" >
                                 <td>{{$item->name}}</td>
                                 <td>
-                                    <a href="{{route('team.edit',$item->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
-                                    <a href="{{route('team.delete',$item->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>                                
+                                @foreach($rooms as $room)
+                                    <a href="{{route('room.edit',$room->id)}}" class="btn btn-warning px-3 radius-30">Edit</a>
+                                    <a href="{{route('room.delete',$room->id)}}" class="btn btn-danger px-3 radius-30" id="delete">Delete</a>                                
+                                @endforeach
                                 </td>
                             </tr>
                             @endforeach

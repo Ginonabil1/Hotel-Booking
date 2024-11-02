@@ -33,7 +33,7 @@
         </li>
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-book-open'></i></i>
+                <div class="parent-icon"><i class='bx bx-book-open'></i>
                 </div>
                 <div class="menu-title">Manage Book Area</div>
             </a>
@@ -44,7 +44,7 @@
         </li>
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-building-house'></i></i>
+                <div class="parent-icon"><i class='bx bx-building-house'></i>
                 </div>
                 <div class="menu-title">Manage Room Type</div>
             </a>
@@ -53,43 +53,99 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-label">UI Elements</li>
+
         <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class='bx bx-cart'></i>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-comment-add' ></i>
                 </div>
-                <div class="menu-title">eCommerce</div>
+                <div class="menu-title">Tesimonial</div>
             </a>
             <ul>
-                <li> <a href="ecommerce-products.html"><i class='bx bx-radio-circle'></i>Products</a>
+                <li> <a href="{{ route('all.testimonial') }}"><i class='bx bx-radio-circle'></i>All Testimonial</a>
                 </li>
-                <li> <a href="ecommerce-products-details.html"><i class='bx bx-radio-circle'></i>Product Details</a>
+                <li> <a href="{{ route('add.testimonial') }}"><i class='bx bx-radio-circle'></i>Add Testimonial</a>
                 </li>
             </ul>
         </li>
         <li>
             <a class="has-arrow" href="javascript:;">
-                <div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
+                <div class="parent-icon"><i class='bx bx-photo-album'></i>
                 </div>
-                <div class="menu-title">Components</div>
+                <div class="menu-title">Hotel Gallery</div>
             </a>
             <ul>
-                <li> <a href="component-alerts.html"><i class='bx bx-radio-circle'></i>Alerts</a>
+                <li> <a href="{{ route('all.gallery') }}"><i class='bx bx-radio-circle'></i>All Gallery</a>
                 </li>
-                <li> <a href="component-accordions.html"><i class='bx bx-radio-circle'></i>Accordions</a>
+            </ul>
+        </li>
+
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-cog' ></i>
+                </div>
+                <div class="menu-title">Setting</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('smtp.setting') }}"><i class='bx bx-radio-circle'></i>SMTP Setting</a>
                 </li>
+
+                <li> <a href="{{ route('site.setting') }}"><i class='bx bx-radio-circle'></i>Site Setting</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="menu-label">Bookings Manage</li>
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class='bx bx-cart'></i>
+                </div>
+                <div class="menu-title">Bookings</div>
+            </a>
+            <ul>
+                <li> <a href="{{route('booking.list')}}"><i class='bx bx-radio-circle'></i>Booking list</a>
+                </li>
+                <li> <a href="{{route('add.roomlist')}}"><i class='bx bx-radio-circle'></i>Add Booking</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-list-ul' ></i>
+                </div>
+                <div class="menu-title">Manage RoomList</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('view.room.list') }}"><i class='bx bx-radio-circle'></i>Room List</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a class="has-arrow" href="javascript:;">
+                <div class="parent-icon"><i class='bx bx-search-alt-2' ></i>
+                </div>
+                <div class="menu-title">Booking Report</div>
+            </a>
+            <ul>
+                <li> <a href="{{ route('booking.report') }}"><i class='bx bx-radio-circle'></i>Search Booking Report</a>
+                </li>
+
+
             </ul>
         </li>
 
      
         <li class="menu-label">Others</li>
         <li>
-            <a href="#" target="_blank">
+            <a href="{{ route('show.contact') }}">
                 <div class="parent-icon"><i class="bx bx-support"></i>
                 </div>
-                <div class="menu-title">Support</div>
+                <div class="menu-title" >Contact Us</div>
             </a>
         </li>
+
+        
     </ul>
     <!--end navigation-->
 </div>
